@@ -42,11 +42,9 @@ int main(){
         }
         
     }
+    printf("All my Children Complete\n");
     printf("Rraheem was here!");
     return 0;
 }
 
-    printf("All my Children Complete\n");
-
-    return 0;
-}
+    
