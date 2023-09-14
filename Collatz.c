@@ -1,3 +1,5 @@
+//Rraheem Was Here!
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -13,7 +15,6 @@ int main(){
     scanf("%d", &number);
 
     printf("collatz %d\n", number);
-    printf("This is the Parent waiting!\n");
 
     while(number != 1){
         if (number % 2 == 0) {
@@ -39,7 +40,11 @@ int main(){
             wait(NULL);
             number = 3 * number + 1;
         }
+        
     }
+    printf("Rraheem was here!");
+    return 0;
+}
 
     printf("All my Children Complete\n");
 
