@@ -15,8 +15,10 @@ int main(){
     scanf("%d", &number);
 
     printf("collatz %d\n", number);
-
+    int stepCnt = 1;
     while(number != 1){
+        
+        
         if (number % 2 == 0) {
             //this is the first child process
             child1 = fork();
@@ -28,6 +30,7 @@ int main(){
             }
             wait(NULL);
             number = number / 2;
+            stepCnt++;
         } else {
             //this is the second child process
             child2 = fork();
@@ -39,9 +42,11 @@ int main(){
             }
             wait(NULL);
             number = 3 * number + 1;
+            stepCnt++;
         }
         
     }
+    printf("Total steps in this collatz was: %d \n", stepCnt);
     printf("All my Children Complete\n");
     printf("Rraheem was here!");
     return 0;
