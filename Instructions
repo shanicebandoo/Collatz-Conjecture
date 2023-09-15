@@ -1,0 +1,112 @@
+General Grading Guidelines: 
+
+The following deductions will apply to all programming assignments. 
+
+1. Any program that does not compile will result in a zero for the assignment. No exceptions will be made for ‘accidental’ uploads, so check your code before submitting. 
+2. Poor Formatting and programming style will result in a 15% deduction. Please see the style guidelines to avoid this deduction. 
+3. The code will go through 2 steps of plagiarism detection. Zero tolerance for academic misconduct!  If you commit any form of academic misconduct in this course, you WILL be reported to the FIU Student Conduct and Academic Affairs office.
+
+Programming Style Guidelines:
+
+The major purpose of programming style guidelines is to make programs easy to read and understand. Good programming style helps make it possible for a person knowledgeable in the application area to quickly read a program and understand how it works. 
+
+1. Your program should begin with a comment that briefly summarizes what it does. For this course, this comment should also include your Name and pantherID. 
+2. Use additional comments when needed in order for a reader to understand what is happening (see also, point 3). 
+3. Variable names and function names should be sufficiently descriptive so that a knowledgeable reader can easily understand what the variable means and what the function does. If this is not possible, comments should be added to make the meaning clear. 
+4. Use consistent indentation to emphasize block structure. 
+5. Use names of moderate length for variables. Most names should be between 2 and 12 letters long. 
+6. Use either underscores or capitalization (camelNaming) for compound names for variables. e.g: tot_vol, total_volumn, or totalVolumn. 
+ 
+
+Assignment description :
+
+Your first programming assignment is to do the following problem in C :
+Screen Shot 2023-01-17 at 12.39.55 PM.png
+ 
+
+Task 1:
+Apply the following changes:
+
+You will create (fork) two processes to print their respective sequence for the Collatz conjecture. The first will produce the sequence which is indicated by the number on the command line and the second process will produce the sequence from the command line number plus 6. Please print " child (1 or 2) " with each number output and be sure the forked processes can run concurrently. The number entered on the command line must be greater than zero and less than 40. 
+Example output if the input is 15 is:
+
+collatz 15
+
+
+This is the Parent waiting!
+From Child1,pid=766 init: number=15 
+From Child1: number=46 
+From Child1: number=23 
+From Child1: number=70 
+From Child1: number=35 
+From Child1: number=106 
+From Child1: number=53 
+From Child1: number=160 
+From Child2,pid=767 init: number = 19
+From Child1: number=80 
+From Child1: number=40 
+From Child2: number=58 
+From Child1: number=20 
+From Child2: number=29 
+From Child1: number=10 
+From Child2: number=88 
+From Child1: number=5 
+From Child2: number=44 
+From Child1: number=16 
+From Child2: number=22 
+From Child1: number=8 
+From Child2: number=11 
+From Child1: number=4 
+From Child2: number=34 
+From Child1: number=2 
+From Child2: number=17 
+From Child1: number=1 
+From Child2: number=52 
+From Child1, pid=766 Im done!
+From Child2: number=26 
+From Child2: number=13 
+From Child2: number=40 
+From Child2: number=20 
+From Child2: number=10 
+From Child2: number=5 
+From Child2: number=16 
+From Child2: number=8 
+From Child2: number=4 
+From Child2: number=2 
+From Child2: number=1 
+From Child2, pid=767 Im done!
+All my Children Complete
+
+ 
+
+Task2:
+Comment on whether the processes always finish in the order in which they are forked. Why in your opinion?
+
+ 
+
+Questions?
+
+if you have any questions or you need help with code please contact your TA  and attend the weekly lab sessions.
+
+ 
+
+Deliverables:
+
+Please submit 2 separate files (myfirstlastname.pdf + myfirstlastname.c ). DO NOT zip them.
+
+1- your code in a PDF format. (e.g. myfirstlastname.pdf )
+
+2- your C source code. (e.g. myfirstlastname.c )
+
+ 
+
+GETTING STARTED:
+
+you can use this  Download this  Download thiscode to get started.
+
+Remember to include the following as a comment at the beginning of your program:
+
+Your name
+Your panther ID
+A description of the program 
+an answer to task 2.
