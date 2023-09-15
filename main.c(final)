@@ -1,0 +1,59 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <sys/types.h>
+#include <sys/wait.h>
+
+void collatzConjecture(int number, int childNum) {
+    printf("From Child%d, pid=%d: number=%d\n", childNum, getpid(), number);
+    
+    while(number != 1){
+        if (number % 2 == 0) {
+            number = number / 2;
+        } else {
+            number = 3 * number + 1;
+        }
+        printf("From Child%d: number=%d\n", childNum, number);
+    }
+    printf("From Child%d, pid=%d: I'm done!\n",  childNum, getpid());
+  }
+
+int main(){
+
+    int number = 0;
+    pid_t child1, child2;
+
+    printf("Please enter a number: ");
+    scanf("%d", &number);
+
+    if(number >= 40 || number <= 0){
+     printf("This is an invalid number.");
+     return 1;
+    }
+
+    printf("collatz %d\n", number);
+    printf("This is the Parent waiting!\n");
+    
+    //this is the first child process
+    child1 = fork();
+    
+    if(child1 == 0) {
+    collatzConjecture(number, 1);
+    exit(0);
+    }
+    wait(NULL);
+
+
+    //this is the second child process
+    child2 = fork();
+    if(child2 == 0) {
+    collatzConjecture(number + 6, 2);
+    exit(0);
+    }
+    wait(NULL);
+    
+
+    printf("All my Children Complete\n");
+
+return 0;
+}
